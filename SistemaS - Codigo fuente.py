@@ -161,7 +161,7 @@ while True:
         elif semana > 0:
             console.print("\n===== Semana 2 =====", style=COLOR_TITULO)
 
-        for dia in range(1):
+        for dia in range(7):
             console.print('\nIngrese el dia de la semana "Ej: Lunes": ', style=COLOR_PREGUNTA, end="")
             Dia_semana = input().title()
             console.print("¿Donde se realizo el trabajo?: ", style=COLOR_PREGUNTA, end="")
