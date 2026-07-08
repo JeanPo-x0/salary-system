@@ -8,7 +8,7 @@ librería `rich`).
 - Pide los datos de cada día trabajado durante 2 semanas (quincena).
 - Registra: día, lugar de trabajo, labor realizada, horas trabajadas 
   (con minutos), horas extra y horas de almuerzo.
-- Permite elegir entre 2 tarifas por hora (precios definidos por mi cliente).
+- Permite elegir entre 2 tarifas por hora o bien ingresar una tarifa personalizada entre ₡500 y ₡2.200.
 - Calcula el pago normal y el pago con recargo del 50% en horas extra.
 - Descuenta automáticamente la hora de almuerzo.
 - Muestra un resumen detallado por día, subtotal por semana, y el 

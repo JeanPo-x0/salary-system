@@ -4,7 +4,7 @@ from rich.console import Console
 console = Console(highlight=False)
 
 COLOR_TITULO = "bold #C9A15A"      # dorado champagne, para el título principal
-COLOR_SUBTITULO ="#5FA8A0"    # cian/turquesa suave
+COLOR_SUBTITULO ="#1DD6C0"    # cian/turquesa suave
 COLOR_ERROR = "bold #E63946"    # rojo fuerte
 COLOR_EXITO ="#D4A5A5"            # Rosa polvo cálido
 COLOR_DIA = "italic #B0A8B9"      # gris-lila suave, para el separador de cada día
@@ -18,6 +18,7 @@ COLOR_DESPEDIDA =  "#BD1883"      # rosa final
 
 hora1 = 1800
 hora2 = 1600
+monto_indefinido = 0
 multiplicacion_hora_extra = 1.5
 
 
@@ -56,8 +57,6 @@ def horas_extra():
 
 
 def horas_almuerzo():
-
-    global hora_de_almuerzo
 
     while True:
         console.print("\n¿El trabajador tomo la hora de almuezo?",style=COLOR_DIA)
@@ -106,18 +105,40 @@ def trys():
 
 def tarifas():
 
+    global monto_indefinido
+
     while True:
         try:
-            console.print("\nIngrese la opcion: ", style=COLOR_PREGUNTA, end="")
+            console.print("\nIngrese una opcion: ", style=COLOR_PREGUNTA, end="")
             opcion = int(input())
 
-            if opcion == 1 or opcion == 2:
-                return opcion
+            if opcion == 1 or opcion == 2 or opcion == 3:
+
+                if opcion == 3:
+
+                    while True:
+                        try:
+                            console.print("\nIngrese el monto a pagar por hora: ", style=COLOR_PREGUNTA, end="")
+                            monto = int(input())
+
+                            if 500 <= monto <= 2200:
+                                monto_indefinido = monto
+                                return opcion
+                            else: 
+                                console.print("\n¡¡El precio a pagar tiene que estar en un rango de ₡500 a ₡2200!!", style=COLOR_ERROR)
+
+                        except ValueError:
+                            console.print("\n¡¡Solo se permiten números, intente de nuevo!!", style=COLOR_ERROR)
+                            continue
+
+                return opcion 
             else:
-                console.print("\n¡¡Opción inválida, ingrese 1 o 2!!", style=COLOR_ERROR)
+                console.print("\n¡¡Opción inválida, ingrese 1, 2 o 3!!", style=COLOR_ERROR)
 
         except ValueError:
             console.print("\n¡¡Solo se permiten números, intente de nuevo!!", style=COLOR_ERROR)
+
+
 
 
 def formato_colones(numero):
@@ -135,6 +156,8 @@ def pedir_continuar():
             return  respuesta 
         else:
             console.print('\n¡¡Respuesta inválida, escriba "Si" para continuar o "No" para salir!!', style=COLOR_ERROR)
+
+
 
 
 while True:
@@ -180,6 +203,7 @@ while True:
     console.print("\n--- Escoja una opcion ---", style=COLOR_TITULO)
     console.print("\nOpcion 1: ₡1.800", style=COLOR_DIA)
     console.print("Opcion 2: ₡1.600", style=COLOR_DIA)
+    console.print("Opcion 3: (Asignar un monto)", style=COLOR_DIA)
     opcion1 = tarifas()
 
     if opcion1 == 1:
@@ -187,6 +211,9 @@ while True:
     
     elif opcion1 == 2:
         tarifa = hora2
+
+    elif opcion1 == 3:
+        tarifa = monto_indefinido
 
 # Calculo 
 
@@ -232,5 +259,3 @@ while True:
         console.print("--- Gracias por usar el sistema ¡¡Hasta luego!! ;) ---", style=COLOR_DESPEDIDA)
         console.print("\n=======================================================\n", style=COLOR_SEPARADOR)
         break
-
-# {}[]
