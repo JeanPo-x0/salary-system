@@ -210,7 +210,7 @@ if opcionX == 1:
 
 # Loop 
 
-            for semana in range(2):
+            for semana in range(1):
                 
                 if semana == 0:
                     console.print("\n===== Semana 1 =====", style=COLOR_TITULO)
