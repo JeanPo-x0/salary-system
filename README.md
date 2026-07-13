@@ -6,6 +6,7 @@ librería `rich`).
 
 ## ¿Qué hace?
 - Pide los datos de cada día trabajado durante 2 semanas (quincena).
+- O tambien puedes calcular una sola semana o la quincena completa (2 semanas) eligiendo al inicio.
 - Registra: día, lugar de trabajo, labor realizada, horas trabajadas 
   (con minutos), horas extra y horas de almuerzo.
 - Permite elegir entre 2 tarifas por hora o bien ingresar una tarifa personalizada entre ₡500 y ₡2.200.
