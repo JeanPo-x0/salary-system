@@ -208,7 +208,7 @@ if opcionX == 1:
             console.print('Fecha "Ej: XX de Junio": ', style=COLOR_PREGUNTA, end="")
             fecha = input().title()
 
-# Loop 
+#  Loop 
 
             for semana in range(1):
                 
