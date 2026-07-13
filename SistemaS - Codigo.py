@@ -185,7 +185,6 @@ def opcion_de_semanas():
 
 # Inicio de el sistema 
 
-
 console.print("\n======== eME.SISTEM ;) ========", style=COLOR_TITULO)
 console.print("\n¿Cuantas semanas desea calcular?", style=COLOR_SUBTITULO)
 console.print("\nOpcion 1: (Una semana)", style=COLOR_DIA)
